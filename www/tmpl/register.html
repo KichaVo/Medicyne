@@ -1,0 +1,66 @@
+<ion-view class="page-register" title="Sign up for Medicyne">
+
+  <ion-nav-bar class="bar-outline">
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon ion-ios7-arrow-back" href="#/login"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <span class="input-label">First Name</span>
+        <input type="text">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Last Name</span>
+        <input type="text">
+      </label>
+    </div>
+
+    <div class="list list-inset">
+      <label class="item item-input item-select">
+        <span class="input-label">
+          Gender
+        </span>
+        <select>
+          <option selected></option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Email</span>
+        <input type="email">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Phone</span>
+        <input type="tel">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Select birthday</span>
+        <input type="date">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">New password</span>
+        <input type="password">
+      </label>
+    </div>
+
+  </ion-content>
+
+  <ion-footer-bar>
+
+    <span class="register-terms">
+      By clicking Sing Up, <br>
+      <b>You agree to Medicyne Terms</b>
+    </span>
+
+    <div class="button button-medium button-positive button-outline" ng-click="doSignUp()">
+      Sign Up
+    </div>
+
+  </ion-footer-bar>
+
+</ion-view>

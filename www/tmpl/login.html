@@ -1,0 +1,53 @@
+<ion-view class="page-login">
+
+  <ion-content detect-gestures gesture-type="swipeup" ng-mousedown="procressSkip($event)">
+
+    <div class="full-width">
+      <div class="logo">
+        <img src="./img/logo/medicyne.png" />
+      </div>
+    </div>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-ios7-email-outline placeholder-icon"></i>
+        <input type="text" placeholder="Email address" ng-model="loginData.email">
+      </label>
+      <label class="item item-input">
+        <i class="icon ion-ios7-unlocked-outline placeholder-icon"></i>
+        <input type="text" placeholder="Password" ng-model="loginData.password">
+      </label>
+    </div>
+
+    <div class="padding internal-buttons">
+      <div class="button-bar">
+        <div class="button button-medium button-positive button-outline" id="button-create-account" ng-click="openRegister()">
+          Create account
+        </div>
+        <div class="button button-medium button-positive button-outline ion-log-in" id="button-login" ng-click="doLogin()">
+          Login
+        </div>
+      </div>
+    </div>
+
+    <div class="padding external-buttons">
+      <div class="list">
+        <div class="item item-icon-left facebook-item">
+          <i class="icon ion-social-facebook"></i>
+          Login with Facebook
+        </div>
+        <div class="item item-icon-left google-item">
+          <i class="icon ion-social-googleplus-outline"></i>
+          Login with Google
+        </div>
+      </div>
+    </div>
+
+    <div class="padding skip-button" id="skip-button">
+      <i class="icon ion-chevron-up"></i>
+      <div>Slide up to skip</div>
+    </div>
+
+  </ion-content>
+
+</ion-view>
