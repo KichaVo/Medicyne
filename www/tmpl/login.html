@@ -1,6 +1,6 @@
 <ion-view class="page-login">
 
-  <ion-content detect-gestures gesture-type="swipeup" ng-mousedown="procressSkip($event)">
+  <ion-content>
 
     <div class="full-width">
       <div class="logo">
@@ -11,11 +11,11 @@
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-ios7-email-outline placeholder-icon"></i>
-        <input type="text" placeholder="Email address" ng-model="loginData.email">
+        <input type="email" placeholder="Email address" ng-model="loginData.email">
       </label>
       <label class="item item-input">
         <i class="icon ion-ios7-unlocked-outline placeholder-icon"></i>
-        <input type="text" placeholder="Password" ng-model="loginData.password">
+        <input type="password" placeholder="Password" ng-model="loginData.password">
       </label>
     </div>
 
@@ -43,11 +43,13 @@
       </div>
     </div>
 
-    <div class="padding skip-button" id="skip-button">
-      <i class="icon ion-chevron-up"></i>
-      <div>Slide up to skip</div>
-    </div>
-
   </ion-content>
+
+  <ion-footer-bar>
+    <div class="skip-button" ng-click="openOtc()">
+      <i class="icon ion-chevron-right"></i>
+      <span>Touch to skip login</span>
+    </div>
+  </ion-footer-bar>
 
 </ion-view>

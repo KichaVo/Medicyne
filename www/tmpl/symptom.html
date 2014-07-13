@@ -1,0 +1,33 @@
+<ion-view class="page-symptom" title="Symptom">
+
+  <ion-nav-bar class="bar-outline">
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon ion-ios7-arrow-back" href="#/"></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <span class="button button-outline button-positive" ng-click="openConversation()">
+        Fix me
+      </span>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-header-bar class="item-input-inset bar-subheader">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios7-search placeholder-icon"></i>
+      <input type="search" placeholder="...">
+    </label>
+    <button class="button button-icon icon ion-ios7-close-empty"></button>
+  </ion-header-bar>
+
+  <ion-content>
+    <ion-list>
+      <ion-item class="item item-checkbox" ng-repeat="symptom in data.symptoms" ng-class="{'item-divider': symptom.isCategory}">
+        <label class="checkbox" ng-if="!symptom.isCategory">
+          <input type="checkbox" ng-model="symptom.isSelected">
+        </label>
+        {{symptom.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-view>

@@ -28,10 +28,15 @@ angular.module('medicyne', ['ionic', 'app.controllers'])
       templateUrl: 'tmpl/register.html',
       controller: 'RegisterCtrl'
     })
-    .state('otc', {
-      url: '/otc',
-      templateUrl: 'tmpl/otc.html',
-      controller: 'OtcCtrl'
+    .state('anonymous', {
+      url: '/anonymous',
+      templateUrl: 'tmpl/anonymous.html',
+      controller: 'AnonymousCtrl'
+    })
+    .state('symptom', {
+      url: '/symptom',
+      templateUrl: 'tmpl/symptom.html',
+      controller: 'SymptomCtrl'
     });
 
   $urlRouterProvider.otherwise('/login');

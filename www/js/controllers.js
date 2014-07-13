@@ -50,8 +50,6 @@ angular.module('app.controllers', [])
 })
 
 .controller('LoginCtrl', function ($scope, $timeout, $ionicModal, $location) {
-  var isSkipActive;
-
   $scope.doLogin = function () {
     $location.path('/');
   };
@@ -60,34 +58,101 @@ angular.module('app.controllers', [])
     $location.path('/register');
   };
 
-
-  $scope.reportEvent = function (event) {
-    if (event.type === 'swipeup' && isSkipActive) {
-
-      $timeout(function () {
-        isSkipActive = false;
-        $location.path('/otc');
-      });
-    }
-  };
-
-  $scope.procressSkip = function ($event) {
-    var target = $event.target;
-
-    var skipButtonId = 'skip-button';
-
-    isSkipActive =
-      (target.id == skipButtonId) ||
-      (target.parentNode && target.parentNode.id == skipButtonId);
-  };
+  $scope.openOtc = function () {
+    $location.path('/anonymous');
+  }
 })
 
 .controller('RegisterCtrl', function ($scope, $ionicModal, $location) {
-  $scope.login = function () {
+  $scope.doRegister = function () {
     $location.path('/');
   };
 })
 
-.controller('OtcCtrl', function ($scope, $ionicModal, $location) {
+.controller('AnonymousCtrl', function ($scope, $ionicModal, $location) {
+  $scope.openSymptom = function () {
+    $location.path('/symptom');
+  };
+})
+
+.controller('SymptomCtrl', function ($scope, $ionicModal, $location) {
+  $scope.openConversation = function() {
+    console.log($scope.data);
+
+    $location.path('/conversation');
+  };
+
+  $scope.data = {
+    symptoms: [{
+      name: 'A',
+      isCategory: true
+    }, {
+        name: 'Symtom A',
+    }, {
+        name: 'B',
+        isCategory: true
+    }, {
+        name: 'Symtom B1',
+    }, {
+        name: 'Symtom B2',
+    }, {
+        name: 'B',
+        isCategory: true
+    }, {
+        name: 'Symtom B1',
+    }, {
+        name: 'Symtom B2',
+    }, {
+        name: 'B',
+        isCategory: true
+    }, {
+        name: 'Symtom B1',
+    }, {
+        name: 'Symtom B2',
+    }, {
+        name: 'B',
+        isCategory: true
+    }, {
+        name: 'Symtom B1',
+    }, {
+        name: 'Symtom B2',
+    }, {
+        name: 'B',
+        isCategory: true
+    }, {
+        name: 'Symtom B1',
+    }, {
+        name: 'Symtom B2',
+    }, {
+        name: 'B',
+        isCategory: true
+    }, {
+        name: 'Symtom B1',
+    }, {
+        name: 'Symtom B2',
+    }, {
+        name: 'B',
+        isCategory: true
+    }, {
+        name: 'Symtom B1',
+    }, {
+        name: 'Symtom B2',
+    }, {
+        name: 'B',
+        isCategory: true
+    }, {
+        name: 'Symtom B1',
+    }, {
+        name: 'Symtom B2',
+    }, {
+        name: 'B',
+        isCategory: true
+    }, {
+        name: 'Symtom B1',
+    }, {
+        name: 'Symtom B2',
+    }]
+  };
+
 
 })

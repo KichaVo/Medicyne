@@ -35,12 +35,14 @@
   background-color: #d84133;
 }
 .page-login .skip-button {
+  width: 100%;
   text-align: center;
 }
 .page-login .skip-button i {
   font-size: 15px;
 }
-.page-login .skip-button div {
+.page-login .skip-button span {
   font-size: 12px;
+  margin-left: 5px;
   cursor: pointer;
 }

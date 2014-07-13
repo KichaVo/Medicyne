@@ -10,6 +10,14 @@
 
     <div class="list list-inset">
       <label class="item item-input">
+        <span class="input-label">Email</span>
+        <input type="email">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Password</span>
+        <input type="password">
+      </label>
+      <label class="item item-input">
         <span class="input-label">First Name</span>
         <input type="text">
       </label>
@@ -31,10 +39,6 @@
         </select>
       </label>
       <label class="item item-input">
-        <span class="input-label">Email</span>
-        <input type="email">
-      </label>
-      <label class="item item-input">
         <span class="input-label">Phone</span>
         <input type="tel">
       </label>
@@ -42,25 +46,23 @@
         <span class="input-label">Select birthday</span>
         <input type="date">
       </label>
-      <label class="item item-input">
-        <span class="input-label">New password</span>
-        <input type="password">
-      </label>
     </div>
 
   </ion-content>
 
   <ion-footer-bar>
-
-    <span class="register-terms">
-      By clicking Sing Up, <br>
-      <b>You agree to Medicyne Terms</b>
-    </span>
-
-    <div class="button button-medium button-positive button-outline" ng-click="doSignUp()">
-      Sign Up
+    <div class="buttons">
+      <span class="register-terms">
+        By clicking Sing Up, <br>
+        <b>You agree to Medicyne Terms</b>
+      </span>
     </div>
-
+    <h1 class="title"></h1>
+    <div class="buttons" ng-click="doSomething()">
+      <button class="button button-medium button-positive button-outline" ng-click="doRegister()">
+        Sign Up
+      </button>
+    </div>
   </ion-footer-bar>
 
 </ion-view>
