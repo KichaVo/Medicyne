@@ -12,7 +12,7 @@ App.factory('Symptoms', function (SymptomsData, Underscore) {
 
     var symptoms = [];
 
-    filter = filter && filter.trim();
+    filter = filter && filter.trim().toLowerCase();
 
     // convert to array
     Underscore.each(_Symptoms, function (symptom, symptomId) {
@@ -20,9 +20,10 @@ App.factory('Symptoms', function (SymptomsData, Underscore) {
         symptomId: symptomId
       }, symptom);
 
-      // filter by name, with type is "start with"
-      symptom.isVisible = (!filter || (filter && symptom.name.toLowerCase().indexOf(filter) === 0));
       symptom.isSelected = (selectedSymptomIds && selectedSymptomIds.indexOf(symptomId) !== -1);
+
+      // filter by name, with type is "start with"
+      symptom.isVisible = (symptom.isSelected || (!filter || (filter && symptom.name.toLowerCase().indexOf(filter) === 0)));
 
       symptoms.push(symptom);
     });
