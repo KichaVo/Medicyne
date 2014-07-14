@@ -12,17 +12,13 @@
 .page-register .register-button .button {
   border-width: 1px !important;
 }
-.page-register .bar-header {
-  border-bottom: 1px solid #eee;
-  box-shadow: none;
-}
 .page-register .bar-footer {
   border-top: 1px solid #eee;
   padding-left: 10px;
   padding-right: 10px;
 }
 .page-register .bar-footer .button {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-radius: 0;
 }

@@ -20,7 +20,9 @@
   cursor: pointer;
 }
 .page-anonymous .launcher .icon:active {
-  opacity: 0.5;
+  color: #fff;
+  background-color: #4F8EF7;
+  border-color: #fff;
 }
 .page-anonymous .launcher span {
   display: block;

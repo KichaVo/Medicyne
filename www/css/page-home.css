@@ -3,6 +3,9 @@
   background: url('../img/bg/bg-main.png');
   background-size: 100% auto;
 }
+.page-home .bar-header {
+  border-bottom-color: transparent;
+}
 .page-home .bar-header .button {
   color: #fff !important;
 }

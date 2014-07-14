@@ -6,6 +6,13 @@
 .bar-transparent .button {
   color: #fff !important;
 }
+.bar-header {
+  border-bottom: 1px solid #eee;
+  box-shadow: none;
+}
+.bar-footer {
+  border-top-color: #fff;
+}
 .bar-outline {
   background: #fff;
 }

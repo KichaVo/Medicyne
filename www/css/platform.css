@@ -50,3 +50,55 @@
   border-width: 3px;
   font-size: 15px;
 }
+.iphone-5 .page-home .avatar,
+.iphone-5s .page-home .avatar {
+  width: 170px;
+  height: 170px;
+  margin-top: 50px;
+}
+.iphone-5 .page-home .name,
+.iphone-5s .page-home .name {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.iphone-5 .page-home .symptom,
+.iphone-5s .page-home .symptom {
+  width: 110px;
+  height: 110px;
+  margin-top: 90px;
+  padding-top: 43px;
+  border-width: 3px;
+  font-size: 15px;
+}
+.iphone-5 .page-login .logo,
+.iphone-5s .page-login .logo {
+  width: 170px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.iphone-5 .page-login .internal-buttons .button,
+.iphone-5s .page-login .internal-buttons .button {
+  height: 40px;
+  min-height: 40px;
+  line-height: 40px;
+}
+.iphone-5 .page-login .external-buttons .item,
+.iphone-5s .page-login .external-buttons .item {
+  height: 30px;
+  padding: 5px 55px;
+  font-size: 13px;
+}
+.iphone-5 .page-login .external-buttons .item .icon,
+.iphone-5s .page-login .external-buttons .item .icon {
+  top: 3px;
+  font-size: 20px;
+}
+.iphone-5 .page-anonymous .launcher .icon,
+.iphone-5s .page-anonymous .launcher .icon {
+  width: 110px;
+  height: 110px;
+  margin-bottom: 10px;
+  padding-top: 43px;
+  border-width: 3px;
+  font-size: 15px;
+}
