@@ -1,3 +1,3 @@
-App.controller('AgreementCtrl', function ($scope, $ionicModal, $location) {
+App.controller('AgreementCtrl', function ($scope, $location) {
 
 })

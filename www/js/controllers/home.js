@@ -1,4 +1,4 @@
-App.controller('HomeCtrl', function ($scope, $ionicModal, $location) {
+App.controller('HomeCtrl', function ($scope, $location) {
 
   $scope.openHistory = function () {
     $location.path('/history');

@@ -13,7 +13,7 @@ App.factory('DiagnosisBuilder', function (DiagnosisAnswerChecker, DiagnosisQuest
   BaseDiagnosis.prototype.reset = function () {
     this.currentRoadmapId = this.diagnosis.startRoadmap;
 
-    this.medicine = null;
+    this.medicines = null;
     this.question = null;
 
     this.isStarted = false;
@@ -47,10 +47,10 @@ App.factory('DiagnosisBuilder', function (DiagnosisAnswerChecker, DiagnosisQuest
       this.isStarted = true;
     }
 
-    if (nextRoadmap.medicine) {
+    if (nextRoadmap.medicines) {
       // found medicine
       this.isDone = true;
-      this.medicine = nextRoadmap.medicine;
+      this.medicines = nextRoadmap.medicines;
 
       this.question = null;
 

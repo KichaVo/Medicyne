@@ -1,7 +1,6 @@
 App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDelegate, $ionicPopup, ControllerStorage, Diagnosis) {
 
-  //var diagnosis = ControllerStorage.getData('symptom.diagnosis');
-  var diagnosis = Diagnosis.getDiagnosis(['allergy']);
+  var diagnosis = ControllerStorage.getData('symptom.diagnosis');
 
   diagnosis.reset();
 
@@ -76,7 +75,7 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     $scope.data.answer.number = null;
 
     $scope.data.conversation.push({
-      text: number,
+      text: '' + number,
       isAnswer: true
     });
 
@@ -92,7 +91,7 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
       $scope.data.question = null;
 
       // show medicine
-      openRecommendation(diagnosis.medicine);
+      openRecommendation(diagnosis.medicines);
       return;
     }
 
@@ -120,8 +119,10 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     }
   }
 
-  function openRecommendation(medicine) {
-    console.log(medicine);
+  function openRecommendation(medicines) {
+    ControllerStorage.setData('conversation.medicineIds', medicines);
+
+    $location.path('/recommendation');
   }
 
 })

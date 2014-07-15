@@ -10,13 +10,13 @@
 
     <div class="conversation">
       <div ng-repeat="line in data.conversation" ng-class="{'question': line.isQuestion, 'answer': line.isAnswer}">
-        {{line.text}}
+        <span ng-bind-html="line.text"></span>
       </div>
     </div>
 
   </ion-content>
 
-  <ion-footer-bar ng-class="" class="item-input-inset">
+  <ion-footer-bar class="item-input-inset">
     <div class="buttons" ng-show="data.question.isYesNoQuestion()">
       <button class="button button-medium button-positive button-outline button-left" answer-group="answer-yes-no" ng-click="doYesAnswer()">
         Yes
@@ -32,7 +32,7 @@
     <label class="item-input-wrapper" answer-group="answer-number" ng-show="data.question.isNumberQuestion()">
       <input type="number" ng-model="data.answer.number" placeholder="...">
     </label>
-    <button class="button button-medium button-positive button-outline" answer-group="answer-number" ng-click="doNumberAnswer($event)">
+    <button class="button button-medium button-positive button-outline" answer-group="answer-number" ng-click="doNumberAnswer()">
       Answer
     </button>
   </ion-footer-bar>

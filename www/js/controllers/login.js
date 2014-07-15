@@ -1,4 +1,4 @@
-App.controller('LoginCtrl', function ($scope, $timeout, $ionicModal, $location) {
+App.controller('LoginCtrl', function ($scope, $location) {
 
   $scope.doLogin = function () {
     $location.path('/');

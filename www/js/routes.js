@@ -44,6 +44,12 @@ App.config(function ($stateProvider, $urlRouterProvider) {
     controller: 'ConversationCtrl'
   })
 
+  .state('recommendation', {
+    url: '/recommendation',
+    templateUrl: 'tmpl/recommendation.html',
+    controller: 'RecommendationCtrl'
+  })
+
   $urlRouterProvider.otherwise('/login');
 
 })

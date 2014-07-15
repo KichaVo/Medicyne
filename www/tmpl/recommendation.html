@@ -1,0 +1,35 @@
+<ion-view class="page-recommendation" title="Recommendation">
+
+  <ion-nav-bar class="bar-outline">
+    <ion-nav-buttons side="left">
+      <a class="button button-icon icon ion-ios7-arrow-back" href="#/symptom"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content scroll="false">
+
+    <ion-slide-box on-slide-changed="slideChanged(index)">
+      <ion-slide ng-repeat="medicine in data.medicines" class="medicine">
+        <div class="picture">
+          <img src="./img/medicines/{{medicine.img}}" />
+        </div>
+        <div class="name">
+          {{medicine.name}}
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+
+  </ion-content>
+
+  <ion-footer-bar>
+    <div class="buttons">
+      <button class="button button-location">
+      </button>
+    </div>
+    <div class="buttons">
+      <button class="button button-share">
+      </button>
+    </div>
+  </ion-footer-bar>
+
+</ion-view>

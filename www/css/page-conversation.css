@@ -81,7 +81,8 @@
 }
 .page-conversation .bar-footer .button {
   text-align: right;
-  font-weight: bold;
+  font-size: 17px;
+  font-weight: normal;
   border: none;
   border-radius: 0;
   color: #13A89E !important;
