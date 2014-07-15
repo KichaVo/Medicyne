@@ -11,7 +11,7 @@ App.factory('AllergyDiagnosis', function (DiagnosisBuilder) {
     },
     'Q002': {
       type: 'YES/NO',
-      text: 'Y/N for num 1 .. 10'
+      text: 'Y/N for num 1 .. 10Y/N for num 1 .. 10Y/N for num 1 .. 10Y/N for num 1 .. 10Y/N for num 1 .. 10Y/N for num 1 .. 10'
     },
     'Q005': {
       type: 'YES/NO',

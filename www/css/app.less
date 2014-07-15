@@ -21,7 +21,7 @@
   background: #fff;
 
   h1, .button {
-    color: #4F8EF7 !important;
+    color: #13A89E !important;
   }
 }
 
@@ -34,21 +34,66 @@
   width: 100%;
 }
 
+.button.button-positive {
+ border-color:#4a87ee;
+ background-color:#4a87ee;
+ color:#fff;
+}
+.button.button-positive:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.button.button-positive.active,
+.button.button-positive.activated {
+  border-color: #13A89E;
+  background-color: #13A89E;
+  box-shadow: none;
+}
+.button.button-positive.button-clear {
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  color: #13A89E;
+}
+.button.button-positive.button-icon {
+  border-color: transparent;
+  background: none;
+}
+.button.button-positive.button-outline {
+  border-color: #13A89E;
+  background: transparent;
+  color: #13A89E;
+}
+.button.button-positive.button-outline.active,
+.button.button-positive.button-outline.activated {
+  background-color: #13A89E;
+  box-shadow: none;
+  color: #fff;
+}
+
 .button-alert {
   min-height: 30px !important;
   height: 30px !important;
 
   border-radius: 0 !important;
 
-  border-color: #4a87ee !important;
+  border-color: #13A89E !important;
   background: transparent !important;
-  color: #4a87ee !important;
+  color: #13A89E !important;
 
   &.active, &.activated {
-    background-color: #4a87ee !important;
+    background-color: #13A89E !important;
     box-shadow: none !important;
     color: #fff !important;
   }
+}
+
+.checkbox input:before, .checkbox .checkbox-icon:before {
+  border-color: #13A89E;
+}
+
+.checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+  background: #13A89E;
 }
 
 .popup {
@@ -56,7 +101,7 @@
 
   .popup-title {
     font-size: 14px;
-    color: #4a87ee !important;
+    color: #13A89E !important;
   }
 
   .popup-body {
@@ -67,4 +112,8 @@
   .button {
     .button-alert;
   }
+}
+
+input {
+  color: #13A89E !important;
 }

@@ -6,9 +6,9 @@
 }
 .page-conversation .conversation .question,
 .page-conversation .conversation .answer {
-  max-width: 90%;
+  max-width: 80%;
   word-wrap: break-word;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   line-height: 24px;
   clear: both;
 }
@@ -16,7 +16,7 @@
   position: relative;
   padding: 10px 20px;
   background: #E5E5EA;
-  border-radius: 25px;
+  border-radius: 15px;
   color: black;
   float: left;
 }
@@ -47,8 +47,8 @@
   position: relative;
   padding: 10px 20px;
   color: white;
-  background: #0B93F6;
-  border-radius: 25px;
+  background: #13A89E;
+  border-radius: 15px;
   float: right;
 }
 .page-conversation .conversation .answer:before {
@@ -58,7 +58,7 @@
   bottom: -2px;
   right: -7px;
   height: 20px;
-  border-right: 20px solid #0B93F6;
+  border-right: 20px solid #13A89E;
   border-bottom-left-radius: 16px 14px;
   -webkit-transform: translate(0, -2px);
 }
@@ -84,12 +84,13 @@
   font-weight: bold;
   border: none;
   border-radius: 0;
+  color: #13A89E !important;
 }
 .page-conversation .bar-footer .button:active,
 .page-conversation .bar-footer .button.active,
 .page-conversation .bar-footer .button.activated {
   background: transparent !important;
-  color: #789fef !important;
+  color: #29bab0 !important;
 }
 .page-conversation .bar-footer .buttons {
   width: 50%;
