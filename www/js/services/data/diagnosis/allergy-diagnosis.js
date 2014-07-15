@@ -84,7 +84,7 @@ App.factory('AllergyDiagnosis', function (DiagnosisBuilder) {
   return DiagnosisBuilder.buildDiagnosis({
     questions: questions,
     roadmap: roadmap,
-    startRoadmap: 'R001'
+    startRoadmap: 'R002'
   });
 
 })

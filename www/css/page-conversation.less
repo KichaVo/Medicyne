@@ -89,9 +89,37 @@
     padding-right: 10px;
 
     .button {
-      width: 100px;
+      text-align: right;
+      font-weight: bold;
 
+      border: none;
       border-radius: 0;
+
+      &:active, &.active, &.activated {
+        background: transparent !important;
+
+        color: #789fef !important;
+      }
+    }
+
+    .buttons {
+      width: 50%;
+
+      .button {
+        width: 100%;
+      }
+
+      .button-left {
+        text-align: center;
+      }
+
+      .button-right {
+        text-align: center;
+      }
+    }
+
+    .item-input-wrapper {
+      background: #fff;
     }
   }
 }

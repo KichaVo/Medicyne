@@ -44,15 +44,13 @@
 .popup {
   background: #fff !important;
 }
-.popup .popup-title,
-.popup .popup-body {
-  color: #555 !important;
-}
 .popup .popup-title {
   font-size: 14px;
+  color: #4a87ee !important;
 }
 .popup .popup-body {
   font-size: 15px;
+  color: #555 !important;
 }
 .popup .button {
   min-height: 30px !important;

@@ -80,6 +80,29 @@
   padding-right: 10px;
 }
 .page-conversation .bar-footer .button {
-  width: 100px;
+  text-align: right;
+  font-weight: bold;
+  border: none;
   border-radius: 0;
+}
+.page-conversation .bar-footer .button:active,
+.page-conversation .bar-footer .button.active,
+.page-conversation .bar-footer .button.activated {
+  background: transparent !important;
+  color: #789fef !important;
+}
+.page-conversation .bar-footer .buttons {
+  width: 50%;
+}
+.page-conversation .bar-footer .buttons .button {
+  width: 100%;
+}
+.page-conversation .bar-footer .buttons .button-left {
+  text-align: center;
+}
+.page-conversation .bar-footer .buttons .button-right {
+  text-align: center;
+}
+.page-conversation .bar-footer .item-input-wrapper {
+  background: #fff;
 }

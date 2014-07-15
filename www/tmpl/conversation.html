@@ -18,19 +18,19 @@
 
   <ion-footer-bar ng-class="" class="item-input-inset">
     <div class="buttons" ng-show="data.question.isYesNoQuestion()">
-      <button class="button button-medium button-positive button-outline" answer-group="answer-yes-no" ng-click="doYesAnswer()">
+      <button class="button button-medium button-positive button-outline button-left" answer-group="answer-yes-no" ng-click="doYesAnswer()">
         Yes
       </button>
     </div>
     <h1 class="title" answer-group="answer-yes-no"></h1>
     <div class="buttons" ng-show="data.question.isYesNoQuestion()">
-      <button class="button button-medium button-positive button-outline" answer-group="answer-yes-no" ng-click="doNoAnswer()">
+      <button class="button button-medium button-positive button-outline button-right" answer-group="answer-yes-no" ng-click="doNoAnswer()">
         No
       </button>
     </div>
 
     <label class="item-input-wrapper" answer-group="answer-number" ng-show="data.question.isNumberQuestion()">
-      <input type="number" ng-model="data.answer.number">
+      <input type="number" ng-model="data.answer.number" placeholder="...">
     </label>
     <button class="button button-medium button-positive button-outline" answer-group="answer-number" ng-click="doNumberAnswer($event)">
       Answer
