@@ -38,6 +38,12 @@ App.config(function ($stateProvider, $urlRouterProvider) {
     controller: 'AgreementCtrl'
   })
 
+  .state('conversation', {
+    url: '/conversation',
+    templateUrl: 'tmpl/conversation.html',
+    controller: 'ConversationCtrl'
+  })
+
   $urlRouterProvider.otherwise('/login');
 
 })

@@ -45,6 +45,8 @@ App.factory('Symptoms', function (SymptomsData, Underscore) {
   function getSortedListWithLetter(items, attr) {
     var list = [];
     var letter = null;
+    var visibleCount = 0;
+    var letterItem, letterVisible;
 
     // sort by attr
     items = Underscore.sortBy(items, function (item) {
@@ -58,18 +60,28 @@ App.factory('Symptoms', function (SymptomsData, Underscore) {
       firstChar = firstChar.trim().charAt(0).toUpperCase();
 
       if (firstChar !== letter) {
-        letter = firstChar;
+        if (letterItem) {
+          letterItem.isVisible = (visibleCount > 0);
+        }
 
-        var letterItem = {
-          _isLetter: true,
-          isVisible: true
+        letter = firstChar;
+        visibleCount = 0;
+
+        letterItem = {
+          _isLetter: true
         };
         letterItem[attr] = letter;
 
         list.push(letterItem);
       }
 
+      visibleCount += item.isVisible;
+
       list.push(item);
+    }
+
+    if (letterItem) {
+      letterItem.isVisible = (visibleCount > 0);
     }
 
     return list;
