@@ -1,4 +1,4 @@
-App.factory('HeadacheDiagnosis', function (BaseDiagnosis) {
+App.factory('HeadacheDiagnosis', function (DiagnosisBuilder) {
 
   var questions = {
     'Q001': {
@@ -64,12 +64,15 @@ App.factory('HeadacheDiagnosis', function (BaseDiagnosis) {
       question: 'Q005',
       answer: {
         'YES': 'R100',
-        'NO': 'R001'
+        'NO': 'R101'
       }
     },
 
     'R100': {
-      medicine: 'M001'
+      medicines: ['children-advil', 'children-motrin']
+    },
+    'R101': {
+      medicines: ['children-tyenol', 'children-advil', 'children-motrin']
     }
   }
 

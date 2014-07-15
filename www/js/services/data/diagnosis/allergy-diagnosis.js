@@ -11,11 +11,7 @@ App.factory('AllergyDiagnosis', function (DiagnosisBuilder) {
     },
     'Q002': {
       type: 'YES/NO',
-<<<<<<< HEAD
-      text: 'Y/N<br> for num 1 .. 10Y/N for num 1 .. 10Y/N for num 1 .. 10Y/N for num 1 .. 10Y/N for num 1 .. 10Y/N for num 1 .. 10'
-=======
       text: 'Are you a boy?'
->>>>>>> Medicyne/master
     },
     'Q003': {
       type: 'YES/NO',
