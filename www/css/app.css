@@ -27,3 +27,44 @@
 .full-width {
   width: 100%;
 }
+.button-alert {
+  min-height: 30px !important;
+  height: 30px !important;
+  border-radius: 0 !important;
+  border-color: #4a87ee !important;
+  background: transparent !important;
+  color: #4a87ee !important;
+}
+.button-alert.active,
+.button-alert.activated {
+  background-color: #4a87ee !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+.popup {
+  background: #fff !important;
+}
+.popup .popup-title,
+.popup .popup-body {
+  color: #555 !important;
+}
+.popup .popup-title {
+  font-size: 14px;
+}
+.popup .popup-body {
+  font-size: 15px;
+}
+.popup .button {
+  min-height: 30px !important;
+  height: 30px !important;
+  border-radius: 0 !important;
+  border-color: #4a87ee !important;
+  background: transparent !important;
+  color: #4a87ee !important;
+}
+.popup .button.active,
+.popup .button.activated {
+  background-color: #4a87ee !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}

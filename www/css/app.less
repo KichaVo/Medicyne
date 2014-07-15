@@ -33,3 +33,40 @@
 .full-width {
   width: 100%;
 }
+
+.button-alert {
+  min-height: 30px !important;
+  height: 30px !important;
+
+  border-radius: 0 !important;
+
+  border-color: #4a87ee !important;
+  background: transparent !important;
+  color: #4a87ee !important;
+
+  &.active, &.activated {
+    background-color: #4a87ee !important;
+    box-shadow: none !important;
+    color: #fff !important;
+  }
+}
+
+.popup {
+  background: #fff !important;
+
+  .popup-title, .popup-body {
+    color: #555 !important;
+  }
+
+  .popup-title {
+    font-size: 14px;
+  }
+
+  .popup-body {
+    font-size: 15px;
+  }
+
+  .button {
+    .button-alert;
+  }
+}
