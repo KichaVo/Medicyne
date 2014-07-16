@@ -9,7 +9,7 @@
   <ion-content>
 
     <div class="conversation">
-      <div ng-repeat="line in data.conversation" ng-class="{'question': line.isQuestion, 'answer': line.isAnswer}">
+      <div ng-repeat="line in data.conversation" ng-class="{'question': line.isQuestion || line.isMessage, 'answer': line.isAnswer, 'message': line.isMessage}">
         <span ng-bind-html="line.text"></span>
       </div>
     </div>
@@ -17,24 +17,40 @@
   </ion-content>
 
   <ion-footer-bar class="item-input-inset">
-    <div class="buttons" ng-show="data.question.isYesNoQuestion()">
-      <button class="button button-medium button-positive button-outline button-left" answer-group="answer-yes-no" ng-click="doYesAnswer()">
+    <div class="buttons" answer-group="answer-yes-no">
+      <button class="button button-medium button-positive button-outline button-left" ng-click="doYesAnswer()">
         Yes
       </button>
     </div>
     <h1 class="title" answer-group="answer-yes-no"></h1>
-    <div class="buttons" ng-show="data.question.isYesNoQuestion()">
-      <button class="button button-medium button-positive button-outline button-right" answer-group="answer-yes-no" ng-click="doNoAnswer()">
+    <div class="buttons" answer-group="answer-yes-no">
+      <button class="button button-medium button-positive button-outline button-right" ng-click="doNoAnswer()">
         No
       </button>
     </div>
 
-    <label class="item-input-wrapper" answer-group="answer-number" ng-show="data.question.isNumberQuestion()">
+    <div class="buttons" answer-group="answer-gender">
+      <button class="button button-medium button-positive button-outline button-left" ng-click="doMaleAnswer()">
+        Male
+      </button>
+    </div>
+    <h1 class="title" answer-group="answer-gender"></h1>
+    <div class="buttons" answer-group="answer-gender">
+      <button class="button button-medium button-positive button-outline button-right" ng-click="doFemaleAnswer()">
+        Female
+      </button>
+    </div>
+
+    <label class="item-input-wrapper" answer-group="answer-number">
       <input type="number" ng-model="data.answer.number" placeholder="...">
     </label>
     <button class="button button-medium button-positive button-outline" answer-group="answer-number" ng-click="doNumberAnswer()">
       Answer
     </button>
+
+    <h1 class="title" answer-group="no-solution">
+      <a class="button button-icon icon ion-ios7-arrow-back" href="#/symptom">Back</a>
+    </h1>
   </ion-footer-bar>
 
 </ion-view>

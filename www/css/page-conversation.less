@@ -81,12 +81,32 @@
         -webkit-transform: translate(-30px, -2px);
       }
     }
+
+    .message {
+      color: #13A89E;
+      font-size: 13px;
+      font-weight: bold;
+      font-style: italic;
+    }
   }
 
   .bar-footer {
+    [answer-group] {
+      display: none;
+    }
+
     border-top: 1px solid #eee;
     padding-left: 10px;
     padding-right: 10px;
+
+    .title {
+      margin-top: 5px;
+
+      .button:before {
+        margin-right: 10px;
+        font-size: 25px;
+      }
+    }
 
     .button {
       text-align: right;

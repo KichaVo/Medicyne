@@ -74,10 +74,26 @@
   border-bottom-left-radius: 10px;
   -webkit-transform: translate(-30px, -2px);
 }
+.page-conversation .conversation .message {
+  color: #13A89E;
+  font-size: 13px;
+  font-weight: bold;
+  font-style: italic;
+}
 .page-conversation .bar-footer {
   border-top: 1px solid #eee;
   padding-left: 10px;
   padding-right: 10px;
+}
+.page-conversation .bar-footer [answer-group] {
+  display: none;
+}
+.page-conversation .bar-footer .title {
+  margin-top: 5px;
+}
+.page-conversation .bar-footer .title .button:before {
+  margin-right: 10px;
+  font-size: 25px;
 }
 .page-conversation .bar-footer .button {
   text-align: right;

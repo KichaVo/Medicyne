@@ -47,11 +47,18 @@ App.factory('DiagnosisBuilder', function (DiagnosisAnswerChecker, DiagnosisQuest
       this.isStarted = true;
     }
 
-    if (nextRoadmap.medicines) {
-      // found medicine
-      this.isDone = true;
-      this.medicines = nextRoadmap.medicines;
+    if (nextRoadmap.medicines || nextRoadmap.message) {
+      // diagnosis done
 
+      if (nextRoadmap.medicines && nextRoadmap.medicines.length) {
+        this.hasSolution = true;
+        this.medicines = nextRoadmap.medicines;
+      } else {
+        this.hasSolution = false;
+        this.message = nextRoadmap.message;
+      }
+
+      this.isDone = true;
       this.question = null;
 
       return false;

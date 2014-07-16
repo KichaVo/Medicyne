@@ -48,5 +48,5 @@
   cursor: pointer;
 }
 .page-login .bar-footer {
-  border-top-color: transparent;
+  border-top-color: transparent !important;
 }

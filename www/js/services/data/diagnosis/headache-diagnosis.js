@@ -10,19 +10,19 @@ App.factory('HeadacheDiagnosis', function (DiagnosisBuilder) {
       }
     },
     'Q002': {
-      type: 'YES/NO',
+      type: 'YES_NO',
       text: 'Are you a boy?'
     },
     'Q003': {
-      type: 'YES/NO',
+      type: 'YES_NO',
       text: 'Are you pregnant?'
     },
     'Q004': {
-      type: 'YES/NO',
+      type: 'YES_NO',
       text: 'Do you have a high fever or sign of infections?'
     },
     'Q005': {
-      type: 'YES/NO',
+      type: 'YES_NO',
       text: '\
         Do you any of the following: <br> \
         1. History of liver disease or drink >= 3 alcoholic drinks per day. <br> \

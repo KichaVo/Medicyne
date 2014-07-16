@@ -36,6 +36,28 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     getQuestion('NO');
   }
 
+  $scope.doMaleAnswer = function () {
+    $scope.data.conversation.push({
+      text: 'Male',
+      isAnswer: true
+    });
+
+    $ionicScrollDelegate.scrollBottom(true);
+
+    getQuestion('MALE');
+  }
+
+  $scope.doFemaleAnswer = function () {
+    $scope.data.conversation.push({
+      text: 'Female',
+      isAnswer: true
+    });
+
+    $ionicScrollDelegate.scrollBottom(true);
+
+    getQuestion('FEMALE');
+  }
+
   $scope.doNumberAnswer = function () {
     var number = $scope.data.answer.number;
     var question = $scope.data.question;
@@ -90,8 +112,21 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     if (!hasNext) {
       $scope.data.question = null;
 
-      // show medicine
-      openRecommendation(diagnosis.medicines);
+      if (diagnosis.hasSolution) {
+        // show medicine
+        openRecommendation(diagnosis.medicines);
+      } else {
+        $scope.data.conversation.push({
+          text: diagnosis.message,
+          isMessage: true
+        });
+
+        angular.element('[answer-group="answer-number"]').hide();
+        angular.element('[answer-group="answer-gender"]').hide();
+        angular.element('[answer-group="answer-yes-no"]').hide();
+        angular.element('[answer-group="no-solution"]').show();
+      }
+
       return;
     }
 
@@ -106,13 +141,26 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
 
     if (question.isYesNoQuestion()) {
       angular.element('[answer-group="answer-number"]').hide();
+      angular.element('[answer-group="answer-gender"]').hide();
+      angular.element('[answer-group="no-solution"]').hide();
       angular.element('[answer-group="answer-yes-no"]').show();
 
       return;
     }
 
-    if (question.isNumberQuestion()) {
+    if (question.isGenderQuestion()) {
       angular.element('[answer-group="answer-yes-no"]').hide();
+      angular.element('[answer-group="answer-number"]').hide();
+      angular.element('[answer-group="no-solution"]').hide();
+      angular.element('[answer-group="answer-gender"]').show();
+
+      return;
+    }
+
+    if (question.isNumberQuestion() || question.isAgeQuestion()) {
+      angular.element('[answer-group="answer-yes-no"]').hide();
+      angular.element('[answer-group="answer-gender"]').hide();
+      angular.element('[answer-group="no-solution"]').hide();
       angular.element('[answer-group="answer-number"]').show();
 
       return;

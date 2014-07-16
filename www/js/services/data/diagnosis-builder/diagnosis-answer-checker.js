@@ -15,8 +15,22 @@ App.factory('DiagnosisAnswerChecker', function (Underscore) {
       return NoChecker(value);
     }
 
+    if (pattern === 'MALE') {
+      return MaleChecker(value);
+    }
+
+    if (pattern === 'FEMALE') {
+      return FemaleChecker(value);
+    }
+
     if (startWith(pattern, 'NUMBER')) {
       pattern = trimLeftBy(pattern, 'NUMBER');
+
+      return NumberChecker(value, pattern);
+    }
+
+    if (startWith(pattern, 'AGE')) {
+      pattern = trimLeftBy(pattern, 'AGE');
 
       return NumberChecker(value, pattern);
     }
@@ -30,6 +44,30 @@ App.factory('DiagnosisAnswerChecker', function (Underscore) {
 
     // string: 'YES'
     return value === 'YES';
+  }
+
+  function NoChecker(value) {
+    // boolean: false
+    if (value === false) return false;
+
+    value = upperCaseTrim(value);
+
+    // string: 'NO'
+    return value === 'NO';
+  }
+
+  function MaleChecker(value) {
+    value = upperCaseTrim(value);
+
+    // string: 'MALE'
+    return value === 'MALE';
+  }
+
+  function FemaleChecker(value) {
+    value = upperCaseTrim(value);
+
+    // string: 'FEMALE'
+    return value === 'FEMALE';
   }
 
   function NoChecker(value) {

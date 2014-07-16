@@ -2,27 +2,24 @@ App.factory('AllergyDiagnosis', function (DiagnosisBuilder) {
 
   var questions = {
     'Q001': {
-      type: 'NUMBER',
-      text: 'How old are you?',
+      type: 'AGE',
       answer: {
         min: 0,
         max: 120
       }
     },
     'Q002': {
-      type: 'YES/NO',
-      text: 'Are you a boy?'
+      type: 'GENDER'
     },
     'Q003': {
-      type: 'YES/NO',
-      text: 'Are you pregnant?'
+      type: 'PREGNANT'
     },
     'Q004': {
-      type: 'YES/NO',
+      type: 'YES_NO',
       text: 'Do you have a high fever or sign of infections?'
     },
     'Q005': {
-      type: 'YES/NO',
+      type: 'YES_NO',
       text: '\
         Do you any of the following: <br> \
         1. History of liver disease or drink >= 3 alcoholic drinks per day. <br> \
@@ -36,14 +33,14 @@ App.factory('AllergyDiagnosis', function (DiagnosisBuilder) {
     'R001': {
       question: 'Q001',
       answer: {
-        'NUMBER [0, 120]': 'R002'
+        'AGE [0, 120]': 'R002'
       }
     },
     'R002': {
       question: 'Q002',
       answer: {
-        'YES': 'R004',
-        'NO': 'R003'
+        'MALE': 'R004',
+        'FEMALE': 'R003'
       }
     },
     'R003': {
@@ -64,12 +61,16 @@ App.factory('AllergyDiagnosis', function (DiagnosisBuilder) {
       question: 'Q005',
       answer: {
         'YES': 'R100',
-        'NO': 'R001'
+        'NO': 'R101'
       }
     },
 
     'R100': {
       medicines: ['children-tyenol', 'children-motrin']
+    },
+
+    'R101': {
+      message: 'Sorry! No medicines found'
     }
   }
 
