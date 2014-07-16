@@ -37,6 +37,7 @@
 .page-login .skip-button {
   width: 100%;
   text-align: center;
+  color: #13A89E;
 }
 .page-login .skip-button i {
   font-size: 15px;
@@ -45,4 +46,7 @@
   font-size: 12px;
   margin-left: 5px;
   cursor: pointer;
+}
+.page-login .bar-footer {
+  border-top-color: transparent;
 }

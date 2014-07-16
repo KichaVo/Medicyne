@@ -2,9 +2,6 @@
 .page-home {
   background: #fff;
 }
-.page-home .bar-header {
-  border-bottom-color: transparent;
-}
 .page-home .bar-header .button {
   color: #13A89E !important;
 }
