@@ -2,13 +2,13 @@
   //background: url('../img/bg/bg-main.png');
   //background-size: 100% auto;
 
-  background: #13A89E;
+  background: #fff;
 
   .bar-header {
     border-bottom-color: transparent;
 
     .button {
-      color: #fff !important;
+      color: #13A89E !important;
     }
   }
 
@@ -34,7 +34,7 @@
     margin: 0px auto;
 
     font-size: 17px;
-    color: #fff;
+    color: #13A89E;
     font-weight: bold;
   }
 
@@ -46,13 +46,17 @@
 
     text-align: center;
 
-    border: 5px solid #fff;
+    background: #13A89E;
+
+    //border: 5px solid #13A89E;
     border-radius: 50%;
 
     cursor: pointer;
 
+    transition: background-color 0.5;
+
     &:active {
-      opacity: 0.5;
+      background-color: #2ec4b7;
     }
   }
 }
