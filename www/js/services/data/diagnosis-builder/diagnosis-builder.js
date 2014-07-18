@@ -47,26 +47,44 @@ App.factory('DiagnosisBuilder', function (DiagnosisAnswerChecker, DiagnosisQuest
       this.isStarted = true;
     }
 
-    if (nextRoadmap.medicines || nextRoadmap.message) {
+    // message
+    if (nextRoadmap.messages) {
+      this.hasMessages = true;
+      this.messages = [].concat(nextRoadmap.messages);
+
+      // get message from messageId
+      for (var i = 0, len = this.messages.length; i < len; i++) {
+        var messageId = this.messages[i];
+        var message = this.diagnosis.messages[messageId];
+
+        this.messages[i] = message;
+      }
+    } else {
+      this.hasMessages = false;
+      this.messages = null;
+    }
+
+    if (nextRoadmap.question) {
+      // has next question
+      var question = this.diagnosis.questions[nextRoadmap.question];
+      this.question = DiagnosisQuestion.createQuestion(question);
+
+      return true;
+    } else {
       // diagnosis done
 
       if (nextRoadmap.medicines && nextRoadmap.medicines.length) {
-        this.hasSolution = true;
+        this.hasMedicines = true;
         this.medicines = nextRoadmap.medicines;
       } else {
-        this.hasSolution = false;
-        this.message = nextRoadmap.message;
+        this.hasMedicines = false;
+        this.medicines = null;
       }
 
       this.isDone = true;
       this.question = null;
 
       return false;
-    } else {
-      var question = this.diagnosis.questions[nextRoadmap.question];
-      this.question = DiagnosisQuestion.createQuestion(question);
-
-      return true;
     }
   }
 

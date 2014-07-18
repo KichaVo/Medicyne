@@ -109,18 +109,24 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
   function getQuestion(answer) {
     var hasNext = diagnosis.next(answer);
 
+    if (diagnosis.hasMessages) {
+      var messages = diagnosis.messages;
+
+      for (var i = 0, len = messages.length; i < len; i++) {
+        $scope.data.conversation.push({
+          text: messages[i],
+          isMessage: true
+        });
+      }
+    }
+
     if (!hasNext) {
       $scope.data.question = null;
 
-      if (diagnosis.hasSolution) {
+      if (diagnosis.hasMedicines) {
         // show medicine
         openRecommendation(diagnosis.medicines);
       } else {
-        $scope.data.conversation.push({
-          text: diagnosis.message,
-          isMessage: true
-        });
-
         angular.element('[answer-group="answer-number"]').hide();
         angular.element('[answer-group="answer-gender"]').hide();
         angular.element('[answer-group="answer-yes-no"]').hide();

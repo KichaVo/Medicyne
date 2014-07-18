@@ -1,5 +1,10 @@
 App.factory('AllergyDiagnosis', function (DiagnosisBuilder) {
 
+  var messages = {
+    'M001': 'Sorry! No medicines found',
+    'M002': 'Test messae 01'
+  };
+
   var questions = {
     'Q001': {
       type: 'AGE',
@@ -37,6 +42,7 @@ App.factory('AllergyDiagnosis', function (DiagnosisBuilder) {
       }
     },
     'R002': {
+      messages: ['M002'],
       question: 'Q002',
       answer: {
         'MALE': 'R004',
@@ -70,12 +76,13 @@ App.factory('AllergyDiagnosis', function (DiagnosisBuilder) {
     },
 
     'R101': {
-      message: 'Sorry! No medicines found'
+      messages: ['M001']
     }
   }
 
   return DiagnosisBuilder.buildDiagnosis({
     questions: questions,
+    messages: messages,
     roadmap: roadmap,
     startRoadmap: 'R001'
   });
