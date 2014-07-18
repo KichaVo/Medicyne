@@ -34,6 +34,12 @@ App.factory('DiagnosisAnswerChecker', function (Underscore) {
 
       return NumberChecker(value, pattern);
     }
+
+    if (startWith(pattern, 'TEXT')) {
+      pattern = trimLeftBy(pattern, 'TEXT');
+
+      return TextChecker(value, pattern);
+    }
   }
 
   function YesChecker(value) {
@@ -118,6 +124,13 @@ App.factory('DiagnosisAnswerChecker', function (Underscore) {
     if (matched && endChar === ']') matched = isNaN(endNumber) || value <= endNumber;
 
     return matched;
+  }
+
+  function TextChecker(value, pattern) {
+    value = (value || '').trim().toUpperCase();
+    pattern = (pattern || '').trim().toUpperCase();
+
+    return value === pattern;
   }
 
   // util functions

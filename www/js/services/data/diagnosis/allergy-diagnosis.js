@@ -32,6 +32,11 @@ App.factory('AllergyDiagnosis', function (DiagnosisBuilder) {
         3. Throbbing head pain only on one side of your head that comes on suddenly, \
           but no formal diagnosis of migraine headache.'
     },
+    'Q006': {
+      type: 'TEXT',
+      text: 'Do you have a high fever or sign of infections?',
+      answer: ['A', 'B']
+    },
   }
 
   var roadmap = {
@@ -59,8 +64,8 @@ App.factory('AllergyDiagnosis', function (DiagnosisBuilder) {
     'R004': {
       question: 'Q004',
       answer: {
-        'YES': 'R005',
-        'NO': 'R005'
+        'YES': 'R006',
+        'NO': 'R006'
       }
     },
     'R005': {
@@ -68,6 +73,13 @@ App.factory('AllergyDiagnosis', function (DiagnosisBuilder) {
       answer: {
         'YES': 'R100',
         'NO': 'R101'
+      }
+    },
+    'R006': {
+      question: 'Q006',
+      answer: {
+        'TEXT A': 'R100',
+        'TEXT B': 'R101'
       }
     },
 

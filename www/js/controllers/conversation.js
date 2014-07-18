@@ -134,6 +134,42 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     getQuestion(number);
   }
 
+  $scope.doTextAnswer = function () {
+    var text = ($scope.data.answer.text || '').trim();
+    var question = $scope.data.question;
+
+    var allowedAnswers = question.answer || [];
+
+    var isAllowed = false;
+    for (var i = 0, len = allowedAnswers.length; i < len; i++) {
+      if (allowedAnswers[i].trim().toUpperCase() === text.toUpperCase()) {
+        isAllowed = true;
+        break;
+      }
+    }
+
+    // if the answer is not allowed
+    if (!isAllowed) {
+      $ionicPopup.alert({
+        title: 'Invalid answer',
+        template: 'Please type one of followings: <b>' + allowedAnswers.join(', ') + '</b>'
+      });
+
+      return;
+    }
+
+    $scope.data.answer.text = null;
+
+    $scope.data.conversation.push({
+      text: '' + text,
+      isAnswer: true
+    });
+
+    $ionicScrollDelegate.scrollBottom(true);
+
+    getQuestion(text);
+  }
+
   function getQuestion(answer) {
     var hasNext = diagnosis.next(answer);
 
@@ -156,6 +192,7 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
         openRecommendation(diagnosis.medicines);
       } else {
         angular.element('[answer-group="answer-number"]').hide();
+        angular.element('[answer-group="answer-text"]').hide();
         angular.element('[answer-group="answer-gender"]').hide();
         angular.element('[answer-group="answer-yes-no"]').hide();
         angular.element('[answer-group="no-solution"]').show();
@@ -193,6 +230,7 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
 
     if (question.isYesNoQuestion()) {
       angular.element('[answer-group="answer-number"]').hide();
+      angular.element('[answer-group="answer-text"]').hide();
       angular.element('[answer-group="answer-gender"]').hide();
       angular.element('[answer-group="no-solution"]').hide();
       angular.element('[answer-group="answer-yes-no"]').show();
@@ -203,6 +241,7 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     if (question.isGenderQuestion()) {
       angular.element('[answer-group="answer-yes-no"]').hide();
       angular.element('[answer-group="answer-number"]').hide();
+      angular.element('[answer-group="answer-text"]').hide();
       angular.element('[answer-group="no-solution"]').hide();
       angular.element('[answer-group="answer-gender"]').show();
 
@@ -213,7 +252,18 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
       angular.element('[answer-group="answer-yes-no"]').hide();
       angular.element('[answer-group="answer-gender"]').hide();
       angular.element('[answer-group="no-solution"]').hide();
+      angular.element('[answer-group="answer-text"]').hide();
       angular.element('[answer-group="answer-number"]').show();
+
+      return;
+    }
+
+    if (question.isTextQuestion()) {
+      angular.element('[answer-group="answer-yes-no"]').hide();
+      angular.element('[answer-group="answer-gender"]').hide();
+      angular.element('[answer-group="no-solution"]').hide();
+      angular.element('[answer-group="answer-number"]').hide();
+      angular.element('[answer-group="answer-text"]').show();
 
       return;
     }

@@ -32,6 +32,10 @@ App.factory('DiagnosisQuestion', function (DiagnosisAnswerChecker, Underscore) {
     return this.type.toUpperCase() === 'NUMBER';
   }
 
+  DiagnosisQuestion.prototype.isTextQuestion = function () {
+    return this.type.toUpperCase() === 'TEXT';
+  }
+
   DiagnosisQuestion.prototype.isAgeQuestion = function () {
     return this.type.toUpperCase() === 'AGE';
   }

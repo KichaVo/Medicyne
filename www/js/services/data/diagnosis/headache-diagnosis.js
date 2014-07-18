@@ -60,14 +60,14 @@ App.factory('HeadacheDiagnosis', function (DiagnosisBuilder) {
     'R003': {
       question: 'Q003',
       answer: {
-        'AGE [0, 8}': 'R101'
+        'AGE [0, 8}': 'R101',
         'AGE [8, 120]': 'R004'
       }
     },
     'R004': {
       question: 'Q004',
       answer: {
-        'NUMBER [0, 7}': 'R005'
+        'NUMBER [0, 7}': 'R005',
         'NUMBER [7, 10]': 'R102'
       }
     },
