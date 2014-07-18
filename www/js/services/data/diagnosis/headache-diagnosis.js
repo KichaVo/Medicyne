@@ -40,6 +40,14 @@ App.factory('HeadacheDiagnosis', function (DiagnosisBuilder) {
         3. Throbbing head pain only on one side of your head that comes on suddenly, \
           but no formal diagnosis of migraine headache.'
     },
+    'Q008': {
+      type: 'YES_NO',
+      text: 'Are you pain medication for headache more than 3 days per week?'
+    },
+    'Q009': {
+      type: 'YES_NO',
+      text: 'Which of the following best describes your headache?'
+    },
   }
 
   var roadmap = {
@@ -92,6 +100,20 @@ App.factory('HeadacheDiagnosis', function (DiagnosisBuilder) {
         'NO': 'R008'
       }
     },
+    'R008': {
+      question: 'Q008',
+      answer: {
+        'YES': 'R103',
+        'NO': 'R009'
+      }
+    },
+    'R009': {
+      question: 'Q009',
+      answer: {
+        'YES': 'R103',
+        'NO': 'R009'
+      }
+    },
 
     'R100': {
       medicines: ['children-tyenol', 'children-motrin']
@@ -103,7 +125,15 @@ App.factory('HeadacheDiagnosis', function (DiagnosisBuilder) {
 
     'R102': {
       message: 'Over-the-counter (OTC) medications are not approriat for the severity of your current condition. Your condition may be serious and needs to be evaluated by a physician.'
-    }
+    },
+
+    'R103': {
+      message: 'Overuse of pain medication for headaches may worsen your headache. Try to decrease usage over a few days. See your doctor if your headache does not improve or worsen.'
+    },
+
+    'R104': {
+      message: 'Cluster Headache'
+    },
   }
 
   return DiagnosisBuilder.buildDiagnosis({
