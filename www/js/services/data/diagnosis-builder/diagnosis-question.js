@@ -19,14 +19,13 @@ App.factory('DiagnosisQuestion', function (DiagnosisAnswerChecker, Underscore) {
     }
 
     if (this.isPregnantQuestion()) {
-      this.type = 'YES_NO';
       this.text = this.text || 'Are you pregnant?';
       return;
     }
   }
 
   DiagnosisQuestion.prototype.isYesNoQuestion = function () {
-    return this.type.toUpperCase() === 'YES_NO';
+    return this.type.toUpperCase() === 'YES_NO' || this.isPregnantQuestion();
   }
 
   DiagnosisQuestion.prototype.isNumberQuestion = function () {

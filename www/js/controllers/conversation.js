@@ -2,6 +2,8 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
 
   var diagnosis = ControllerStorage.getData('symptom.diagnosis');
 
+  var userProfile = {};
+
   diagnosis.reset();
 
   $scope.data = {
@@ -22,7 +24,14 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
 
     $ionicScrollDelegate.scrollBottom(true);
 
-    getQuestion('YES');
+    var answer = 'YES';
+
+    var question = $scope.data.question;
+    if (question.isPregnantQuestion()) {
+      userProfile.pregnant = answer;
+    }
+
+    getQuestion(answer);
   }
 
   $scope.doNoAnswer = function () {
@@ -33,7 +42,14 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
 
     $ionicScrollDelegate.scrollBottom(true);
 
-    getQuestion('NO');
+    var answer = 'NO';
+
+    var question = $scope.data.question;
+    if (question.isPregnantQuestion()) {
+      userProfile.pregnant = answer;
+    }
+
+    getQuestion(answer);
   }
 
   $scope.doMaleAnswer = function () {
@@ -44,7 +60,11 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
 
     $ionicScrollDelegate.scrollBottom(true);
 
-    getQuestion('MALE');
+    var gender = 'MALE';
+
+    userProfile.gender = gender;
+
+    getQuestion(gender);
   }
 
   $scope.doFemaleAnswer = function () {
@@ -55,7 +75,11 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
 
     $ionicScrollDelegate.scrollBottom(true);
 
-    getQuestion('FEMALE');
+    var gender = 'FEMALE';
+
+    userProfile.gender = gender;
+
+    getQuestion(gender);
   }
 
   $scope.doNumberAnswer = function () {
@@ -103,6 +127,10 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
 
     $ionicScrollDelegate.scrollBottom(true);
 
+    if (question.isAgeQuestion()) {
+      userProfile.age = number;
+    }
+
     getQuestion(number);
   }
 
@@ -137,6 +165,24 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     }
 
     var question = diagnosis.question;
+
+    // check for gender is already answered
+    if (question.isGenderQuestion() && userProfile.gender !== undefined) {
+      getQuestion(userProfile.gender);
+      return;
+    }
+
+    // check for age is already answered
+    if (question.isAgeQuestion() && userProfile.age !== undefined) {
+      getQuestion(userProfile.age);
+      return;
+    }
+
+    // check for pregnant is already answered
+    if (question.isAgeQuestion() && userProfile.pregnant !== undefined) {
+      getQuestion(userProfile.pregnant);
+      return;
+    }
 
     $scope.data.question = question;
 
