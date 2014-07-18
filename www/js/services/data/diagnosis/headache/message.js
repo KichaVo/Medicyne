@@ -8,7 +8,15 @@ App.factory('HeadacheMessage', function () {
 
     'M003': 'Overuse of pain medication for headaches may worsen your headache. Try to decrease usage over a few days. See your doctor if your headache does not improve or worsen.',
 
-    'M004': 'Cluster Headache'
+    'M004': 'Cluster Headache',
+
+    'M005': 'Tension Headache',
+
+    'M006': 'Migraine Headache',
+
+    'M007': 'Sinus Headache',
+
+    'M008': 'See a physician'
 
   }
 

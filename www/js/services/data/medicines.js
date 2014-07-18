@@ -8,6 +8,12 @@ App.factory('Medicines', function (MedicinesData) {
   }
 
   function getMedicine(medicineId) {
+    var medicineData = MedicinesData[medicineId];
+
+    if (!medicineData) {
+      throw new Error('Medicine not found: ' + medicineId);
+    }
+
     var medicine = {
       medicineId: medicineId,
       name: MedicinesData[medicineId].name,
@@ -21,6 +27,8 @@ App.factory('Medicines', function (MedicinesData) {
 
   function getMedicines(medicineIds) {
     var medicines = [];
+
+    medicineIds = medicineIds || [];
 
     for (var i = 0, len = medicineIds.length; i < len; i++) {
       medicines.push(getMedicine(medicineIds[i]));
