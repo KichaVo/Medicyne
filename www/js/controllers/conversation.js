@@ -216,7 +216,7 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     }
 
     // check for pregnant is already answered
-    if (question.isAgeQuestion() && userProfile.pregnant !== undefined) {
+    if (question.isPregnantQuestion() && userProfile.pregnant !== undefined) {
       getQuestion(userProfile.pregnant);
       return;
     }
