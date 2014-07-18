@@ -191,11 +191,7 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
         // show medicine
         openRecommendation(diagnosis.medicines);
       } else {
-        angular.element('[answer-group="answer-number"]').hide();
-        angular.element('[answer-group="answer-text"]').hide();
-        angular.element('[answer-group="answer-gender"]').hide();
-        angular.element('[answer-group="answer-yes-no"]').hide();
-        angular.element('[answer-group="no-solution"]').show();
+        showAnswerGroup('no-solution');
       }
 
       return;
@@ -229,44 +225,33 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     });
 
     if (question.isYesNoQuestion()) {
-      angular.element('[answer-group="answer-number"]').hide();
-      angular.element('[answer-group="answer-text"]').hide();
-      angular.element('[answer-group="answer-gender"]').hide();
-      angular.element('[answer-group="no-solution"]').hide();
-      angular.element('[answer-group="answer-yes-no"]').show();
+      showAnswerGroup('answer-yes-no');
 
       return;
     }
 
     if (question.isGenderQuestion()) {
-      angular.element('[answer-group="answer-yes-no"]').hide();
-      angular.element('[answer-group="answer-number"]').hide();
-      angular.element('[answer-group="answer-text"]').hide();
-      angular.element('[answer-group="no-solution"]').hide();
-      angular.element('[answer-group="answer-gender"]').show();
+      showAnswerGroup('answer-gender');
 
       return;
     }
 
     if (question.isNumberQuestion() || question.isAgeQuestion()) {
-      angular.element('[answer-group="answer-yes-no"]').hide();
-      angular.element('[answer-group="answer-gender"]').hide();
-      angular.element('[answer-group="no-solution"]').hide();
-      angular.element('[answer-group="answer-text"]').hide();
-      angular.element('[answer-group="answer-number"]').show();
+      showAnswerGroup('answer-number');
 
       return;
     }
 
     if (question.isTextQuestion()) {
-      angular.element('[answer-group="answer-yes-no"]').hide();
-      angular.element('[answer-group="answer-gender"]').hide();
-      angular.element('[answer-group="no-solution"]').hide();
-      angular.element('[answer-group="answer-number"]').hide();
-      angular.element('[answer-group="answer-text"]').show();
+      showAnswerGroup('answer-text');
 
       return;
     }
+  }
+
+  function showAnswerGroup(groupName) {
+    angular.element('[answer-group]').hide();
+    angular.element('[answer-group="' + groupName + '"]').show();
   }
 
   function openRecommendation(medicines) {
