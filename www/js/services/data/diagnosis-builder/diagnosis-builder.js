@@ -11,7 +11,7 @@ App.factory('DiagnosisBuilder', function (DiagnosisAnswerChecker, DiagnosisQuest
   }
 
   BaseDiagnosis.prototype.reset = function () {
-    this.currentRoadmapId = this.diagnosis.startRoadmap;
+    this.currentRoadmapId = this.diagnosis.roadmap.startRoadmap;
 
     this.medicines = null;
     this.question = null;
