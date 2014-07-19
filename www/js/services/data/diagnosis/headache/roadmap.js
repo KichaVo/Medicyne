@@ -14,7 +14,7 @@ App.factory('HeadacheRoadmap', function () {
     'R002': {
       question: 'Q002',
       answer: {
-        'YES': 'R003',
+        'YES': 'R999',
         'NO': 'R003'
       }
     },
@@ -28,15 +28,16 @@ App.factory('HeadacheRoadmap', function () {
     'R004': {
       question: 'Q004',
       answer: {
-        'NUMBER [0, 7}': 'R005',
+        'NUMBER [0, 1}': 'R997',
+        'NUMBER [1, 7}': 'R005',
         'NUMBER [7, 10]': 'R102'
       }
     },
     'R005': {
       question: 'Q005',
       answer: {
-        'YES': 'R006',
-        'NO': 'R102'
+        'YES': 'R102',
+        'NO': 'R006'
       }
     },
     'R006': {
@@ -86,8 +87,8 @@ App.factory('HeadacheRoadmap', function () {
     'R012': {
       question: 'Q003',
       answer: {
-        'AGE [8, 12]': 'R203',
-        'AGE {12, ?]': 'R204'
+        'AGE [8, 12}': 'R203',
+        'AGE [12, ?]': 'R204'
       }
     },
 
@@ -128,6 +129,13 @@ App.factory('HeadacheRoadmap', function () {
         'AGE [12, ?]': 'R211'
       }
     },
+    'R999': {
+      question: 'Q999',
+      answer: {
+        'YES': 'R998',
+        'NO': 'R003'
+      }
+    },
 
 
     //===========================================================================================================================
@@ -148,6 +156,13 @@ App.factory('HeadacheRoadmap', function () {
       messages: ['M004']
     },
 
+    'R997': {
+      messages: ['M010']
+    },
+
+    'R998': {
+      messages: ['M009']
+    },
     //===========================================================================================================================
 
     'R201': {
@@ -183,6 +198,5 @@ App.factory('HeadacheRoadmap', function () {
     'R211': {
       medicines: ['tylenol-sinus-congestion-pain', 'robitussin-nasal-relief', 'advil-congestion-relief', 'advil-cold-and-sinus', 'aleve-D-sinus-and-cold', 'aleve-D-sinus-and-headache']
     }
-
   }
 })

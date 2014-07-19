@@ -8,6 +8,10 @@ App.factory('HeadacheQuestion', function () {
     'Q002': {
       type: 'PREGNANT'
     },
+    'Q999': {
+      type: 'YES_NO',
+      text: 'Have you been pregnant for more than 27 weeks?'
+    },
     'Q003': {
       type: 'AGE',
       answer: {
@@ -21,11 +25,11 @@ App.factory('HeadacheQuestion', function () {
         min: 0,
         max: 10
       },
-      text: 'Pain scale (0 = no pain, 10 = severe pain)'
+      text: 'What is your current pain level (0 = no pain, 10 = severe pain)'
     },
     'Q005': {
       type: 'YES_NO',
-      text: 'How long have you experienced this headache? (&lt;10 days)'
+      text: 'Have you experienced this headache for 10 days or more?' //(&lt;10 days)
     },
     'Q006': {
       type: 'YES_NO',
@@ -42,7 +46,7 @@ App.factory('HeadacheQuestion', function () {
     },
     'Q008': {
       type: 'YES_NO',
-      text: 'Are you pain medication for headache more than 3 days per week?'
+      text: 'Are you using pain medication for headache more than 3 days per week?'
     },
     'Q009': {
       type: 'TEXT',
@@ -55,9 +59,10 @@ App.factory('HeadacheQuestion', function () {
             D. Pressure behind eyes or face, comes on with sinus symptoms (usually stuffy nose). Pain improves as sinus symptoms get better.'
     },
     'Q010': {
-      type: 'YES_NO',
       messages: ['M005'],
+      type: 'YES_NO',
       text: '\
+            <b>You may be experiencing symptoms of</b> <u>Tension Headache</u> <br> \
             Do you have any of the following: <br> \
             1. Asthma & nasal polyps. <br> \
             2. Chronic/recurrent stomach ulcers.<br> \
@@ -69,9 +74,10 @@ App.factory('HeadacheQuestion', function () {
             8. Aspirin allergy.'
     },
     'Q011': {
-      type: 'YES_NO',
       messages: ['M006'],
+      type: 'YES_NO',
       text: '\
+             <b>You may be experiencing symptoms of</b> <u>Migraine Headache</u> <br> \
             Do you have any of the following: <br> \
             1. Asthma & nasal polyps. <br> \
             2. Chronic/recurrent stomach ulcers.<br> \
@@ -83,9 +89,10 @@ App.factory('HeadacheQuestion', function () {
             8. Aspirin allergy.'
     },
     'Q012': {
-      type: 'YES_NO',
       messages: ['M007'],
+      type: 'YES_NO',
       text: '\
+             <b>You may be experiencing symptoms of</b> <u>Sinus Headache</u> <br> \
             Do you have any of the following: <br> \
             1. Asthma & nasal polyps. <br> \
             2. Chronic/recurrent stomach ulcers.<br> \
