@@ -59,10 +59,8 @@ App.factory('HeadacheQuestion', function () {
             D. Pressure behind eyes or face, comes on with sinus symptoms (usually stuffy nose). Pain improves as sinus symptoms get better.'
     },
     'Q010': {
-      messages: ['M005'],
       type: 'YES_NO',
       text: '\
-            <b>You may be experiencing symptoms of</b> <u>Tension Headache</u> <br> \
             Do you have any of the following: <br> \
             1. Asthma & nasal polyps. <br> \
             2. Chronic/recurrent stomach ulcers.<br> \
@@ -74,10 +72,8 @@ App.factory('HeadacheQuestion', function () {
             8. Aspirin allergy.'
     },
     'Q011': {
-      messages: ['M006'],
       type: 'YES_NO',
       text: '\
-             <b>You may be experiencing symptoms of</b> <u>Migraine Headache</u> <br> \
             Do you have any of the following: <br> \
             1. Asthma & nasal polyps. <br> \
             2. Chronic/recurrent stomach ulcers.<br> \
@@ -89,10 +85,8 @@ App.factory('HeadacheQuestion', function () {
             8. Aspirin allergy.'
     },
     'Q012': {
-      messages: ['M007'],
       type: 'YES_NO',
       text: '\
-             <b>You may be experiencing symptoms of</b> <u>Sinus Headache</u> <br> \
             Do you have any of the following: <br> \
             1. Asthma & nasal polyps. <br> \
             2. Chronic/recurrent stomach ulcers.<br> \
