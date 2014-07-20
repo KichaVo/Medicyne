@@ -209,6 +209,8 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
           isMessage: true
         });
       }
+
+      bindEvents();
     }
 
     if (!hasNext) {
@@ -252,6 +254,8 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
       questionIndex: questionCount
     });
 
+    bindEvents();
+
     if (question.isYesNoQuestion()) {
       showAnswerGroup('answer-yes-no');
 
@@ -278,8 +282,8 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
   }
 
   function showAnswerGroup(groupName) {
-    angular.element('[answer-group]').hide();
-    angular.element('[answer-group="' + groupName + '"]').show();
+    angular.element('.page-conversation [answer-group]').hide();
+    angular.element('.page-conversation [answer-group="' + groupName + '"]').show();
   }
 
   function openRecommendation(medicines) {
@@ -323,6 +327,19 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
 
       getQuestion(answer.answer, answer.text);
     }
+  }
+
+  function bindEvents() {
+    angular.element('.page-conversation .disease')
+      .off('click.info')
+      .on('click.info', openDiseaseInfo);
+  }
+
+  function openDiseaseInfo() {
+    var element = angular.element(this);
+    var diseaseId = element.data('disease');
+
+    console.log('openDiseaseInfo:', diseaseId);
   }
 
 })
