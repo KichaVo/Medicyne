@@ -71,6 +71,7 @@ App.factory('HeadacheRoadmap', function () {
       }
     },
     'R010': {
+      messages: ['M005'],
       question: 'Q010',
       answer: {
         'YES': 'R011',
@@ -93,6 +94,7 @@ App.factory('HeadacheRoadmap', function () {
     },
 
     'R021': {
+      messages: ['M006'],
       question: 'Q011',
       answer: {
         'YES': 'R011',
@@ -109,6 +111,7 @@ App.factory('HeadacheRoadmap', function () {
     },
 
     'R031': {
+      messages: ['M007'],
       question: 'Q012',
       answer: {
         'YES': 'R032',

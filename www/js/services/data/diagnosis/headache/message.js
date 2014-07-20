@@ -10,11 +10,11 @@ App.factory('HeadacheMessage', function () {
 
     'M004': 'You may be experiencing symptoms of <u>Cluster Headache</u>. Over-the-counter (OTC) medications are not approriate for the severity of your current condition. Your condition may be serious and needs to be evaluated by a physician.',
 
-    'M005': 'You may be experiencing symptoms of <u>Tension Headache</u>',
+    'M005': '<b>You may be experiencing symptoms of</b> <u>Tension Headache</u> <b>!!!</b>',
 
-    'M006': 'You may be experiencing symptoms of <u>Migraine Headache</u>',
+    'M006': '<b>You may be experiencing symptoms of</b> <u>Migraine Headache</u> <b>!!!</b>',
 
-    'M007': 'You may be experiencing symptoms of <u>Sinus Headache</u>',
+    'M007': '<b>You may be experiencing symptoms of</b> <u>Sinus Headache</u> <b>!!!</b>',
 
     'M008': 'Sorry little cutie pie, you may be experiencing symptoms of <u>Sinus Headache</u>. Over-the-counter (OTC) medications are not recommended for your age group. Ask mommy or daddy to take you to your pediatrician.',
 
