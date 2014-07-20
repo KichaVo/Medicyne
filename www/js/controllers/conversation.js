@@ -321,16 +321,17 @@ App.controller('ConversationCtrl', function ($scope, $sce, $timeout, $location, 
 
     for (var i = 0, len = answers.length; i < len; i++) {
       var answer = answers[i];
+      var question = $scope.data.question;
 
       if (answer.answer !== undefined) {
         // remember profile
-        if (question.isAgeQuestion()) {
+        if (question && question.isAgeQuestion()) {
           userProfile.age = answer.answer;
         }
-        if (question.isGenderQuestion()) {
+        if (question && question.isGenderQuestion()) {
           userProfile.gender = answer.answer;
         }
-        if (question.isPregnantQuestion()) {
+        if (question && question.isPregnantQuestion()) {
           userProfile.pregnant = answer.answer;
         }
         // add answer to conversation again
