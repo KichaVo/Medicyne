@@ -94,7 +94,7 @@ App.controller('ConversationCtrl', function ($scope, $sce, $timeout, $location, 
 
   $scope.doFemaleAnswer = function () {
     var text = 'Female';
-    var answer = 'MALE';
+    var answer = 'FEMALE';
 
     $scope.data.conversation.push({
       text: text,
