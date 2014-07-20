@@ -1,4 +1,4 @@
-App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDelegate, $ionicPopup, ControllerStorage, Diagnosis, Underscore) {
+App.controller('ConversationCtrl', function ($scope, $sce, $timeout, $location, $ionicScrollDelegate, $ionicPopup, ControllerStorage, Diagnosis) {
 
   var diagnosis = ControllerStorage.getData('symptom.diagnosis');
 
@@ -24,13 +24,18 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     });
 
     confirmPopup.then(function (accept) {
-      if (accept) rollback(questionIndex);
+      if (accept) {
+        rollback(questionIndex);
+        $ionicScrollDelegate.scrollBottom(true);
+      }
     });
   }
 
   $scope.reset = function () {
     resetData();
     getQuestion();
+
+    $ionicScrollDelegate.scrollTop(true);
   }
 
   $scope.doYesAnswer = function () {
@@ -205,7 +210,7 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
 
       for (var i = 0, len = messages.length; i < len; i++) {
         $scope.data.conversation.push({
-          text: messages[i],
+          text: $sce.trustAsHtml(messages[i]),
           isMessage: true
         });
       }
@@ -249,7 +254,7 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     $scope.data.question = question;
 
     $scope.data.conversation.push({
-      text: question.text,
+      text: $sce.trustAsHtml(question.text),
       isQuestion: true,
       questionIndex: questionCount
     });
@@ -330,16 +335,21 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
   }
 
   function bindEvents() {
-    angular.element('.page-conversation .disease')
-      .off('click.info')
-      .on('click.info', openDiseaseInfo);
+    $timeout(function () {
+      angular.element('.page-conversation disease')
+        .off('click.info')
+        .on('click.info', openDiseaseInfo);
+    });
   }
 
-  function openDiseaseInfo() {
+  function openDiseaseInfo(event) {
     var element = angular.element(this);
-    var diseaseId = element.data('disease');
+    var diseaseId = element.attr('id');
 
     console.log('openDiseaseInfo:', diseaseId);
+
+    event.preventDefault();
+    event.stopPropagation();
   }
 
 })

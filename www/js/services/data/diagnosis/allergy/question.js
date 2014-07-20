@@ -17,7 +17,7 @@ App.factory('AllergyQuestion', function () {
     },
     'Q004': {
       type: 'YES_NO',
-      text: 'Do you have a high fever or sign of infections?'
+      text: 'Do you have a high fever or sign of infections? <disease id="demo-disease-2">Disease 2</disease>'
     },
     'Q005': {
       type: 'YES_NO',
