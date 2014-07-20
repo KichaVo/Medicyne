@@ -8,15 +8,15 @@ App.factory('HeadacheMessage', function () {
 
     'M003': 'Overuse of pain medication for headaches may worsen your headache. Try to decrease usage over a few days. See your doctor if your headache does not improve or worsen.',
 
-    'M004': 'You may be experiencing symptoms of <medicine>Cluster Headache</medicine>. Over-the-counter (OTC) medications are not approriate for the severity of your current condition. Your condition may be serious and needs to be evaluated by a physician.',
+    'M004': 'You may be experiencing symptoms of <span class=\'disease\'>Cluster Headache</span>. Over-the-counter (OTC) medications are not approriate for the severity of your current condition. Your condition may be serious and needs to be evaluated by a physician.',
 
-    'M005': 'You may be experiencing symptoms of <medicine>Tension Headache</medicine> !!!',
+    'M005': 'You may be experiencing symptoms of <span class=\'disease\'>Tension Headache</span> !!!',
 
-    'M006': 'You may be experiencing symptoms of <medicine>Migraine Headache</medicine> !!!',
+    'M006': 'You may be experiencing symptoms of <span class=\'disease\'>Migraine Headache</span> !!!',
 
-    'M007': 'You may be experiencing symptoms of <medicine>Sinus Headache</medicine> !!!',
+    'M007': 'You may be experiencing symptoms of <span class=\'disease\'>Sinus Headache</span> !!!',
 
-    'M008': 'Sorry little cutie pie, you may be experiencing symptoms of <medicine>Sinus Headache</medicine>. Over-the-counter (OTC) medications are not recommended for your age group. Ask mommy or daddy to take you to your pediatrician.',
+    'M008': 'Sorry little cutie pie, you may be experiencing symptoms of <span class=\'disease\'>Sinus Headache</span>. Over-the-counter (OTC) medications are not recommended for your age group. Ask mommy or daddy to take you to your pediatrician.',
 
     'M009': 'To ensure the safety of your pregnancy, you should seek the advice of your doctor.',
 
