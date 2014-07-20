@@ -130,6 +130,9 @@
 .page-conversation .bar-footer .buttons .button-right {
   text-align: center;
 }
+.page-conversation .bar-footer .buttons .button.button-icon:before {
+  margin-right: 10px !important;
+}
 .page-conversation .bar-footer .item-input-wrapper {
   background: #fff;
 }

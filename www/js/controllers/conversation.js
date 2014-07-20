@@ -1,85 +1,106 @@
-App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDelegate, $ionicPopup, ControllerStorage, Diagnosis) {
+App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDelegate, $ionicPopup, ControllerStorage, Diagnosis, Underscore) {
 
   var diagnosis = ControllerStorage.getData('symptom.diagnosis');
 
-  var userProfile = {};
+  var userProfile;
+  var diagnosisAnswers;
+  var questionCount;
 
-  diagnosis.reset();
-
-  $scope.data = {
-    conversation: [],
-    question: null,
-    answer: {
-      number: null
-    }
-  };
-
+  resetData();
   getQuestion();
 
+  $scope.rollback = function ($event) {
+    var element = angular.element($event.target);
+    if (!element.hasClass('question')) element = element.closest('.question');
+    if (!element.size() || element.hasClass('message')) return;
+
+    var questionIndex = element.data('question-index');
+
+    if (questionIndex == questionCount) return;
+
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Warning',
+      template: 'Are you sure to get back to this question?'
+    });
+
+    confirmPopup.then(function (accept) {
+      if (accept) rollback(questionIndex);
+    });
+  }
+
+  $scope.reset = function () {
+    resetData();
+    getQuestion();
+  }
+
   $scope.doYesAnswer = function () {
+    var text = 'Yes';
+    var answer = 'YES';
+
     $scope.data.conversation.push({
-      text: 'Yes',
+      text: text,
       isAnswer: true
     });
 
     $ionicScrollDelegate.scrollBottom(true);
-
-    var answer = 'YES';
 
     var question = $scope.data.question;
     if (question.isPregnantQuestion()) {
       userProfile.pregnant = answer;
     }
 
-    getQuestion(answer);
+    getQuestion(answer, text);
   }
 
   $scope.doNoAnswer = function () {
+    var text = 'No';
+    var answer = 'NO';
+
     $scope.data.conversation.push({
-      text: 'No',
+      text: text,
       isAnswer: true
     });
 
     $ionicScrollDelegate.scrollBottom(true);
-
-    var answer = 'NO';
 
     var question = $scope.data.question;
     if (question.isPregnantQuestion()) {
       userProfile.pregnant = answer;
     }
 
-    getQuestion(answer);
+    getQuestion(answer, text);
   }
 
   $scope.doMaleAnswer = function () {
+    var text = 'Male';
+    var answer = 'MALE';
+
     $scope.data.conversation.push({
-      text: 'Male',
+      text: text,
       isAnswer: true
     });
 
     $ionicScrollDelegate.scrollBottom(true);
 
-    var gender = 'MALE';
+    userProfile.gender = answer;
 
-    userProfile.gender = gender;
-
-    getQuestion(gender);
+    getQuestion(answer, text);
   }
 
   $scope.doFemaleAnswer = function () {
+    var text = 'Female';
+    var answer = 'MALE';
+
     $scope.data.conversation.push({
-      text: 'Female',
+      text: text,
       isAnswer: true
     });
 
     $ionicScrollDelegate.scrollBottom(true);
 
-    var gender = 'FEMALE';
+    userProfile.gender = answer;
 
-    userProfile.gender = gender;
-
-    getQuestion(gender);
+    getQuestion(answer, text);
   }
 
   $scope.doNumberAnswer = function () {
@@ -170,7 +191,13 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     getQuestion(text);
   }
 
-  function getQuestion(answer) {
+  function getQuestion(answer, text) {
+    questionCount += 1;
+    diagnosisAnswers.push({
+      answer: answer,
+      text: text
+    });
+
     var hasNext = diagnosis.next(answer);
 
     if (diagnosis.hasMessages) {
@@ -221,7 +248,8 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
 
     $scope.data.conversation.push({
       text: question.text,
-      isQuestion: true
+      isQuestion: true,
+      questionIndex: questionCount
     });
 
     if (question.isYesNoQuestion()) {
@@ -258,6 +286,43 @@ App.controller('ConversationCtrl', function ($scope, $location, $ionicScrollDele
     ControllerStorage.setData('conversation.medicineIds', medicines);
 
     $location.path('/recommendation');
+  }
+
+  function resetData() {
+    userProfile = {};
+
+    diagnosisAnswers = [];
+    questionCount = 0;
+
+    $scope.data = {
+      conversation: [],
+      question: null,
+      answer: {
+        number: null
+      }
+    };
+
+    diagnosis.reset();
+  }
+
+  function rollback(questionIndex) {
+    var answers = diagnosisAnswers.slice(0, questionIndex);
+
+    resetData();
+
+    for (var i = 0, len = answers.length; i < len; i++) {
+      var answer = answers[i];
+
+      if (answer.answer !== undefined) {
+        // add answer to conversation again
+        $scope.data.conversation.push({
+          text: '' + (answer.text || answer.answer),
+          isAnswer: true
+        });
+      }
+
+      getQuestion(answer.answer, answer.text);
+    }
   }
 
 })

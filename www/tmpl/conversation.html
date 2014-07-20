@@ -9,7 +9,7 @@
   <ion-content>
 
     <div class="conversation">
-      <div ng-repeat="line in data.conversation" ng-class="{'question': line.isQuestion || line.isMessage, 'answer': line.isAnswer, 'message': line.isMessage}">
+      <div ng-repeat="line in data.conversation" ng-class="{'question': line.isQuestion || line.isMessage, 'answer': line.isAnswer, 'message': line.isMessage}" ng-click="rollback($event)" data-question-index="{{line.questionIndex}}">
         <span ng-bind-html="line.text"></span>
       </div>
     </div>
@@ -55,9 +55,17 @@
       Answer
     </button>
 
-    <h1 class="title" answer-group="no-solution">
-      <a class="button button-icon icon ion-ios7-arrow-back" href="#/symptom">Back</a>
-    </h1>
+    <div class="buttons" answer-group="no-solution">
+      <a class="button button-medium button-positive button-outline button-right button-icon icon ion-ios7-arrow-back" href="#/symptom">
+        Back
+      </a>
+    </div>
+    <h1 class="title" answer-group="no-solution"></h1>
+    <div class="buttons" answer-group="no-solution">
+      <button class="button button-medium button-positive button-outline button-right button-icon icon ion-loop" ng-click="reset()">
+        Retry
+      </button>
+    </div>
   </ion-footer-bar>
 
 </ion-view>
