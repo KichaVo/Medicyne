@@ -1,4 +1,4 @@
-App.factory('Symptoms', function (SymptomsData, Underscore) {
+App.factory('Symptoms', function (SymptomsData, Lodash) {
 
   var Symptoms = SymptomsData;
 
@@ -15,8 +15,8 @@ App.factory('Symptoms', function (SymptomsData, Underscore) {
     filter = filter && filter.trim().toLowerCase();
 
     // convert to array
-    Underscore.each(_Symptoms, function (symptom, symptomId) {
-      symptom = Underscore.extend({
+    Lodash.forEach(_Symptoms, function (symptom, symptomId) {
+      symptom = Lodash.assign({
         symptomId: symptomId
       }, symptom);
 
@@ -33,11 +33,11 @@ App.factory('Symptoms', function (SymptomsData, Underscore) {
   }
 
   function getSelectedSymptomIds(symptoms) {
-    var selectedSymptoms = Underscore.where(symptoms, {
+    var selectedSymptoms = Lodash.where(symptoms, {
       isSelected: true
     });
 
-    var selectedSymptomIds = Underscore.pluck(selectedSymptoms, 'symptomId');
+    var selectedSymptomIds = Lodash.pluck(selectedSymptoms, 'symptomId');
 
     return selectedSymptomIds;
   }
@@ -49,7 +49,7 @@ App.factory('Symptoms', function (SymptomsData, Underscore) {
     var letterItem, letterVisible;
 
     // sort by attr
-    items = Underscore.sortBy(items, function (item) {
+    items = Lodash.sortBy(items, function (item) {
       return item[attr];
     });
 

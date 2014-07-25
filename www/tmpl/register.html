@@ -11,44 +11,43 @@
     <div class="list list-inset">
       <label class="item item-input">
         <span class="input-label">Email</span>
-        <input type="email">
+        <input type="email" ng-model="account.email">
       </label>
       <label class="item item-input">
         <span class="input-label">Password</span>
-        <input type="password">
+        <input type="password" ng-model="account.password">
       </label>
       <label class="item item-input">
         <span class="input-label">Confirm password</span>
-        <input type="password">
+        <input type="password" ng-model="account.confirmPassword">
       </label>
     </div>
 
     <div class="list list-inset">
       <label class="item item-input">
         <span class="input-label">First Name</span>
-        <input type="text">
+        <input type="text" ng-model="account.firstName">
       </label>
       <label class="item item-input">
         <span class="input-label">Last Name</span>
-        <input type="text">
+        <input type="text" ng-model="account.lastName">
       </label>
       <label class="item item-input item-select">
         <span class="input-label">
           Gender
         </span>
-        <select>
-          <option selected></option>
-          <option>Male</option>
-          <option>Female</option>
+        <select ng-model="account.gender">
+          <option value="MALE">Male</option>
+          <option value="FEMALE">Female</option>
         </select>
       </label>
       <label class="item item-input">
         <span class="input-label">Phone</span>
-        <input type="tel">
+        <input type="tel" ng-model="account.phone">
       </label>
       <label class="item item-input">
         <span class="input-label">Select birthday</span>
-        <input type="date">
+        <input type="date" ng-model="account.dateOfBirth">
       </label>
     </div>
 

@@ -1,4 +1,4 @@
-App.factory('Diagnosis', function (DiagnosisData, Underscore, $injector) {
+App.factory('Diagnosis', function (DiagnosisData, Lodash, $injector) {
 
   var Diagnosis = DiagnosisData;
 
@@ -11,7 +11,7 @@ App.factory('Diagnosis', function (DiagnosisData, Underscore, $injector) {
 
     var matchedDiagnosis = null;
 
-    Underscore.each(_Diagnosis, function (diagnosisSymptomIds, diagnosis) {
+    Lodash.forEach(_Diagnosis, function (diagnosisSymptomIds, diagnosis) {
       if (matchedDiagnosis !== null) return;
 
       if (isSymptomMatched(symptomIds, diagnosisSymptomIds)) {
@@ -29,8 +29,8 @@ App.factory('Diagnosis', function (DiagnosisData, Underscore, $injector) {
   function isSymptomMatched(symtomIds, diagnosisSymptomIds) {
     var isMatched = true;
 
-    isMatched = isMatched && (Underscore.difference(symtomIds, diagnosisSymptomIds).length == 0);
-    isMatched = isMatched && (Underscore.difference(diagnosisSymptomIds, symtomIds).length == 0);
+    isMatched = isMatched && (Lodash.difference(symtomIds, diagnosisSymptomIds).length == 0);
+    isMatched = isMatched && (Lodash.difference(diagnosisSymptomIds, symtomIds).length == 0);
 
     return isMatched;
   }

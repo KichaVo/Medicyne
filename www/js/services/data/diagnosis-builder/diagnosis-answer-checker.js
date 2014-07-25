@@ -1,4 +1,4 @@
-App.factory('DiagnosisAnswerChecker', function (Underscore) {
+App.factory('DiagnosisAnswerChecker', function () {
 
   return {
     check: check
