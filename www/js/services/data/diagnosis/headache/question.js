@@ -25,7 +25,8 @@ App.factory('HeadacheQuestion', function () {
         min: 0,
         max: 10
       },
-      text: 'What is your current pain level (0 = no pain, 10 = severe pain)'
+      text: 'What is your current pain level? <br> \
+            (0 = no pain, 10 = severe pain)'
     },
     'Q005': {
       type: 'YES_NO',
@@ -38,7 +39,7 @@ App.factory('HeadacheQuestion', function () {
     'Q007': {
       type: 'YES_NO',
       text: '\
-        Do you any of the following: <br> \
+        <b>Do you any of the following:</b> <br> \
         1. History of liver disease or drink &gt;= 3 alcoholic drinks per day. <br> \
         2. Headache caused by other medical condition. <br> \
         3. Throbbing head pain only on one side of your head that comes on suddenly, \
@@ -52,7 +53,7 @@ App.factory('HeadacheQuestion', function () {
       type: 'TEXT',
       answer: ['A', 'B', 'C', 'D'],
       text: '\
-            Which of the following best describes your headache? <br> \
+            <b>Which of the following best describes your headache?</b> <br> \
             A. Serve pain on one side of the head, usually recurring in groups or cluster. <br> \
             B. From top of the head to base of skull, tight and squeezing pain that comes on slowly. Last for minutes to hours.<br> \
             C. One-sided, serve, throbbing pain that last between 4 and 72 hours. <br> \
@@ -61,7 +62,7 @@ App.factory('HeadacheQuestion', function () {
     'Q010': {
       type: 'YES_NO',
       text: '\
-            Do you have any of the following: <br> \
+            <b>Do you have any of the following:</b> <br> \
             1. Asthma & nasal polyps. <br> \
             2. Chronic/recurrent stomach ulcers.<br> \
             3. Gout. <br> \
@@ -74,7 +75,7 @@ App.factory('HeadacheQuestion', function () {
     'Q011': {
       type: 'YES_NO',
       text: '\
-            Do you have any of the following: <br> \
+            <b>Do you have any of the following:</b> <br> \
             1. Asthma & nasal polyps. <br> \
             2. Chronic/recurrent stomach ulcers.<br> \
             3. Gout. <br> \
@@ -87,7 +88,7 @@ App.factory('HeadacheQuestion', function () {
     'Q012': {
       type: 'YES_NO',
       text: '\
-            Do you have any of the following: <br> \
+            <b>Do you have any of the following:</b> <br> \
             1. Asthma & nasal polyps. <br> \
             2. Chronic/recurrent stomach ulcers.<br> \
             3. Gout. <br> \

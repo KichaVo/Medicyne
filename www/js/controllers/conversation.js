@@ -20,7 +20,7 @@ App.controller('ConversationCtrl', function ($scope, $sce, $timeout, $location, 
 
     var confirmPopup = $ionicPopup.confirm({
       title: 'Warning',
-      template: 'Are you sure to get back to this question?'
+      template: 'Are you sure you want to go back to this question?'
     });
 
     confirmPopup.then(function (accept) {

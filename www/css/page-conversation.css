@@ -5,16 +5,16 @@
   font-style: italic !important;
 }
 .page-conversation .conversation {
-  max-width: 90%;
+  max-width: 91%;
   margin: 0px auto;
   padding: 20px 0px;
 }
 .page-conversation .conversation .question,
 .page-conversation .conversation .answer {
-  max-width: 90%;
+  max-width: 91%;
   word-wrap: break-word;
   margin-bottom: 10px;
-  line-height: 24px;
+  line-height: 17px;
   font-size: 13px;
   clear: both;
 }
@@ -22,7 +22,7 @@
   position: relative;
   padding: 10px 20px;
   background: #E5E5EA;
-  border-radius: 15px;
+  border-radius: 12px;
   color: black;
   float: left;
 }
@@ -54,7 +54,7 @@
   padding: 10px 20px;
   color: white;
   background: #13A89E;
-  border-radius: 15px;
+  border-radius: 12px;
   float: right;
 }
 .page-conversation .conversation .answer:before {
