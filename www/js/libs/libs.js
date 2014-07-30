@@ -1,5 +1,5 @@
 angular.module('app.libs', [])
 
-.factory('Underscore', function () {
+.factory('Lodash', function () {
   return window._;
 });

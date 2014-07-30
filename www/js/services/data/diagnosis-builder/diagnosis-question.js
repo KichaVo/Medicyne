@@ -1,4 +1,4 @@
-App.factory('DiagnosisQuestion', function (DiagnosisAnswerChecker, Underscore) {
+App.factory('DiagnosisQuestion', function (DiagnosisAnswerChecker) {
 
   function DiagnosisQuestion(question) {
     this.type = question.type || '';

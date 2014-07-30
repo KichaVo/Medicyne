@@ -1,7 +1,7 @@
-App.factory('DiagnosisBuilder', function (DiagnosisAnswerChecker, DiagnosisQuestion, Underscore) {
+App.factory('DiagnosisBuilder', function (DiagnosisAnswerChecker, DiagnosisQuestion, Lodash) {
 
   function Question(question) {
-    Underscore.extend(this, question);
+    Lodash.assign(this, question);
   }
 
   function BaseDiagnosis(diagnosis) {
@@ -30,11 +30,11 @@ App.factory('DiagnosisBuilder', function (DiagnosisAnswerChecker, DiagnosisQuest
     if (this.isStarted) {
       var nextRoadmapId = null;
 
-      Underscore.each(currentRoadmap.answer, function (roadmapId, pattern) {
-        if (nextRoadmapId) return;
-
+      Lodash.forEach(currentRoadmap.answer, function (roadmapId, pattern) {
         if (DiagnosisAnswerChecker.check(pattern, answer)) {
           nextRoadmapId = roadmapId;
+
+          return false;
         }
       });
 

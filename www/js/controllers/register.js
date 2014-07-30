@@ -1,7 +1,11 @@
 App.controller('RegisterCtrl', function ($scope, $location) {
 
+  $scope.account = {};
+
   $scope.doRegister = function () {
-    $location.path('/');
+    console.log($scope);
+
+    //$location.path('/');
   };
 
 })
