@@ -10,60 +10,64 @@ App.factory('SymptomsData', function () {
     name: 'Allergy'
   };
 
-  Symptoms['sore-throat'] = {
-    name: 'Sore throat'
+  Symptoms['canker-sores'] = {
+    name: 'Canker sores'
   };
 
   Symptoms['sneezing'] = {
     name: 'Sneezing'
   };
 
-  Symptoms['flu'] = {
-    name: 'Flu'
+  Symptoms['cough'] = {
+    name: 'Cough'
   };
 
   Symptoms['fever'] = {
     name: 'Fever'
   };
 
-  Symptoms['diarrhea'] = {
-    name: 'Diarrhea'
+  Symptoms['cold-sores'] = {
+    name: 'Cold sores'
   };
 
-  Symptoms['nausea'] = {
-    name: 'Nausea'
+  Symptoms['constipation'] = {
+    name: 'Constipation'
   };
 
-  Symptoms['tightness-in-the-chest'] = {
-    name: 'Tightness in the chest'
+  Symptoms['hard-stool'] = {
+    name: 'Hard stool'
   };
 
-  Symptoms['heart-attack'] = {
-    name: 'Heart attack'
+  Symptoms['fever-blisters'] = {
+    name: 'Fever blisters'
   };
 
-  Symptoms['strain'] = {
-    name: 'Strain'
+  Symptoms['muscle-pain'] = {
+    name: 'Muscle pain'
   };
 
-  Symptoms['strain'] = {
-    name: 'Strain'
+  Symptoms['heartburn'] = {
+    name: 'Heartburn'
   };
 
-  Symptoms['strain'] = {
-    name: 'Strain'
+  Symptoms['inflammation'] = {
+    name: 'Inflammation'
   };
 
-  Symptoms['eyestrain'] = {
-    name: 'Eyestrain'
+  Symptoms['itchy-eyes'] = {
+    name: 'Itchy eyes'
   };
 
-  Symptoms['sleepy'] = {
-    name: 'Sleepy'
+  Symptoms['itchy-throat'] = {
+    name: 'Itchy throat'
   };
 
-  Symptoms['dizziness'] = {
-    name: 'Dizziness'
+  Symptoms['joint-pain'] = {
+    name: 'Joint pain'
+  };
+
+  Symptoms['runny-nose'] = {
+    name: 'Runny nose'
   };
 
   return Symptoms;
